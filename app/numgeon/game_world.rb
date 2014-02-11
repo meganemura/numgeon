@@ -23,6 +23,31 @@ module Numgeon
       self.backgroundMusicPlayer.stop
     end
 
+    # タップされた
+    def tapped(node)
+      # プレイヤーが押すべき数字は最小の数値
+      if node.number == numbers.min
+        # 正しいノードならパネルを次の数字に進める
+        current_max = numbers.max
+        next_number = 0
+        loop do
+          next_number = current_max + rand_range(-1..5)
+          break if next_number > node.number  # 自分よりも大きい数字にする
+        end
+        node.set_number(next_number)
+        node.on_success
+      else
+        # 正しくないノードなら最小のものを赤色にする
+        min_number = numbers.min
+        @panels.each do |panel|
+          if panel.number == min_number
+            panel.on_failed
+          end
+        end
+        node.on_success
+      end
+    end
+
 
     private
 
@@ -78,7 +103,16 @@ module Numgeon
     # ゲームシステムのセットアップ
     def setup_system
       @current_max    = 9  # 現在の最大値 (次に出現する数字はこれに 1 を足したもの)
-      @current_cursor = 1  # プレイヤーが押すべき数字
+    end
+
+    def numbers
+      @panels.map {|panel| panel.number }
+    end
+
+    def rand_range(range)
+      a = range.first
+      b = range.last
+      a + rand(range.last)
     end
 
   end

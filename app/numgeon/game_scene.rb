@@ -91,11 +91,13 @@ module Numgeon
         touched_node && touched_node.on_down
       when UIGestureRecognizerStateChanged
         logging "UILongPress: UIGestureRecognizerStateChanged: #{touched_nodes.inspect}"
-        @last_touched_node && @last_touched_node.on_up
+        @last_touched_node && @last_touched_node.on_noop
         touched_node && touched_node.on_down
       when UIGestureRecognizerStateEnded
         logging "UILongPress: UIGestureRecognizerStateEnded: #{touched_nodes.inspect}"
-        touched_node && touched_node.on_up
+        if touched_node
+          @world.tapped(touched_node)
+        end
       end
 
       @last_touched_node = touched_node
