@@ -1,4 +1,4 @@
-module Mogeon
+module Numgeon
 
   # TODO:
   #   State が変わった時に実行する処理を登録したい

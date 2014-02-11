@@ -1,6 +1,6 @@
-# mogeon
+# numgeon
 
-[![Code Climate](https://codeclimate.com/github/meganemura/mogeon.png)](https://codeclimate.com/github/meganemura/mogeon)
+[![Code Climate](https://codeclimate.com/github/meganemura/numgeon.png)](https://codeclimate.com/github/meganemura/numgeon)
 
 ## LICENSE
 

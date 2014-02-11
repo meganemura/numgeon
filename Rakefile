@@ -10,10 +10,10 @@ end
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
-  app.name = 'mogeon'
+  app.name = 'numgeon'
   app.frameworks += ["SpriteKit"]
-  app.files_dependencies 'app/mogeon/unit/body.rb'   => 'app/mogeon/unit/base.rb'
-  app.files_dependencies 'app/mogeon/unit/enemy.rb'  => 'app/mogeon/unit/base.rb'
-  app.files_dependencies 'app/mogeon/unit/friend.rb' => 'app/mogeon/unit/base.rb'
-  app.files_dependencies 'app/mogeon/unit/tile.rb'   => 'app/mogeon/unit/base.rb'
+  app.files_dependencies 'app/numgeon/unit/body.rb'   => 'app/numgeon/unit/base.rb'
+  app.files_dependencies 'app/numgeon/unit/enemy.rb'  => 'app/numgeon/unit/base.rb'
+  app.files_dependencies 'app/numgeon/unit/friend.rb' => 'app/numgeon/unit/base.rb'
+  app.files_dependencies 'app/numgeon/unit/tile.rb'   => 'app/numgeon/unit/base.rb'
 end

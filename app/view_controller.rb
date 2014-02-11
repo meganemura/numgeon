@@ -14,7 +14,7 @@ class ViewController < UIViewController
     sk_view.showsNodeCount = true
 
     # Create and configure the scene.
-    scene = Mogeon::MenuScene.sceneWithSize(sk_view.bounds.size)
+    scene = Numgeon::MenuScene.sceneWithSize(sk_view.bounds.size)
 
     # Present the scene.
     sk_view.presentScene(scene)

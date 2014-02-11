@@ -1,4 +1,4 @@
-module Mogeon
+module Numgeon
   class GameWorld
 
     ENEMY_SPAWN_INTERVAL = 3

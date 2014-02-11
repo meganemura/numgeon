@@ -1,4 +1,4 @@
-module Mogeon
+module Numgeon
   class Tile < Unit::Base
 
     REAL_SIZE = 32

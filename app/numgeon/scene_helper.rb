@@ -1,4 +1,4 @@
-module Mogeon
+module Numgeon
   module SceneHelper
 
     # name をキーとして一回だけ実行する

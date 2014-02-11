@@ -1,4 +1,4 @@
-module Mogeon
+module Numgeon
   class UnitFactory
     def initialize
       reset

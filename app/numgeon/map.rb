@@ -1,4 +1,4 @@
-module Mogeon
+module Numgeon
 
   class Map
     class << self

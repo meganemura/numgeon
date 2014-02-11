@@ -1,4 +1,4 @@
-module Mogeon
+module Numgeon
   class MenuScene < SKScene
     def initWithSize(size)
       super
@@ -8,7 +8,7 @@ module Mogeon
     def didMoveToView(view)
       # Start Game Label
       label = SKLabelNode.labelNodeWithFontNamed("Chalkduster")
-      label.text = "Mogeon"
+      label.text = "Numgeon"
       label.fontSize = 40
       label.fontColor = SKColor.whiteColor
       label.position = [self.size.width, self.size.height].to_point / 2

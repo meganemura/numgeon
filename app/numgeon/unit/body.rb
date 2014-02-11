@@ -1,4 +1,4 @@
-module Mogeon
+module Numgeon
   module Unit
     class Body < Unit::Base
 

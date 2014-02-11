@@ -1,4 +1,4 @@
-module Mogeon
+module Numgeon
   module SoundEffect
     class << self
 

@@ -1,4 +1,4 @@
-describe "Application 'mogeon'" do
+describe "Application 'numgeon'" do
   before do
     @app = UIApplication.sharedApplication
   end

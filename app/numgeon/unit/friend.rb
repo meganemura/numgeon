@@ -1,4 +1,4 @@
-module Mogeon
+module Numgeon
   class Friend < Unit::Body
     include Unit::Thinkable
 

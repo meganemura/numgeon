@@ -1,4 +1,4 @@
-module Mogeon
+module Numgeon
   class Enemy < Unit::Body
     include Unit::Thinkable
 

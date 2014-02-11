@@ -1,4 +1,4 @@
-module Mogeon
+module Numgeon
   module Effect
 
     class << self
