@@ -16,6 +16,13 @@ module Numgeon
       # setup_background_music
     end
 
+    # ゲーム終了時の操作
+    def finish
+      self.backgroundMusicPlayer.stop
+    end
+
+    private
+
     def setup_panels
       # Panel.size = @scene.frame.size
 
@@ -62,11 +69,6 @@ module Numgeon
       self.backgroundMusicPlayer.numberOfLoops = -1
       self.backgroundMusicPlayer.prepareToPlay
       self.backgroundMusicPlayer.play
-    end
-
-    # ゲーム終了時の操作
-    def finish
-      self.backgroundMusicPlayer.stop
     end
 
   end
