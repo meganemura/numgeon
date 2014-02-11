@@ -11,9 +11,9 @@ module Numgeon
 
       setup_hud
 
-      setup_sound_effect
+      # setup_sound_effect
 
-      setup_background_music
+      # setup_background_music
     end
 
     def setup_panels
@@ -25,18 +25,16 @@ module Numgeon
 
       # GameScene にパネルを追加
       # 次のように配置する
-      # 1,  2,  3,
-      # 4,  5,  6,
       # 7,  8,  9,
+      # 4,  5,  6,
+      # 1,  2,  3,
       #
       # left, center, right
-      @panels.each_slice(3).with_index do |(l_panel, c_panel, r_panel), i|
-        l_panel.locate(0, i)
-        c_panel.locate(1, i)
-        r_panel.locate(2, i)
-        @scene << l_panel
-        @scene << c_panel
-        @scene << r_panel
+      #
+      @panels.each_with_index do |panel, i|
+        panel.set_number(i + 1)
+        panel.locate(i % 3, i / 3)
+        @scene << panel
       end
     end
 

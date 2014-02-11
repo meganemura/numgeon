@@ -82,16 +82,23 @@ module Numgeon
     def long_press(recognizer)
       touch_location  = recognizer.locationInView(recognizer.view)
       touch_location  = self.convertPointFromView(touch_location)
-      touched_node    = self.nodeAtPoint(touch_location)
+      touched_nodes   = self.nodesAtPoint(touch_location)
+      touched_node    = touched_nodes.find {|node| node.class == Panel }
 
       case recognizer.state
       when UIGestureRecognizerStateBegan
-        logging "UILongPress: UIGestureRecognizerStateBegan"
+        logging "UILongPress: UIGestureRecognizerStateBegan: #{touched_nodes.inspect}"
+        touched_node && touched_node.on_down
       when UIGestureRecognizerStateChanged
-        logging "UILongPress: UIGestureRecognizerStateChanged"
+        logging "UILongPress: UIGestureRecognizerStateChanged: #{touched_nodes.inspect}"
+        @last_touched_node && @last_touched_node.on_up
+        touched_node && touched_node.on_down
       when UIGestureRecognizerStateEnded
-        logging "UILongPress: UIGestureRecognizerStateEnded"
+        logging "UILongPress: UIGestureRecognizerStateEnded: #{touched_nodes.inspect}"
+        touched_node && touched_node.on_up
       end
+
+      @last_touched_node = touched_node
     end
 
   end
