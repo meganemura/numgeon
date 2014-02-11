@@ -5,13 +5,18 @@ module Numgeon
     TEXTURE   = "tilesheet"
 
     def set_number(n)
-      @label ||= SKLabelNode.labelNodeWithFontNamed("Courier").tap do |config|
+      setup_label unless @label
+      @number = n
+      @label.text = n.to_s
+    end
+    attr_reader :number
+
+    def setup_label
+      @label = SKLabelNode.labelNodeWithFontNamed("Courier").tap do |config|
         config.name = "number"
         config.fontSize = 15
         config.fontColor = SKColor.greenColor
       end
-
-      @label.text = n.to_s
       self << @label
     end
 
@@ -23,8 +28,16 @@ module Numgeon
       @label.fontColor = SKColor.blueColor
     end
 
-    def on_up
+    def on_success
+      @label.fontColor = SKColor.greenColor
+    end
+
+    def on_failed
       @label.fontColor = SKColor.redColor
+    end
+
+    def on_noop
+      @label.fontColor = SKColor.greenColor
     end
   end
 end
