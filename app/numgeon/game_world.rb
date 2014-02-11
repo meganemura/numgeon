@@ -14,12 +14,15 @@ module Numgeon
       # setup_sound_effect
 
       # setup_background_music
+
+      setup_system
     end
 
     # ゲーム終了時の操作
     def finish
       self.backgroundMusicPlayer.stop
     end
+
 
     private
 
@@ -69,6 +72,13 @@ module Numgeon
       self.backgroundMusicPlayer.numberOfLoops = -1
       self.backgroundMusicPlayer.prepareToPlay
       self.backgroundMusicPlayer.play
+    end
+
+
+    # ゲームシステムのセットアップ
+    def setup_system
+      @current_max    = 9  # 現在の最大値 (次に出現する数字はこれに 1 を足したもの)
+      @current_cursor = 1  # プレイヤーが押すべき数字
     end
 
   end
